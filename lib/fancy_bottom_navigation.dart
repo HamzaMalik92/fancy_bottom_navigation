@@ -192,36 +192,57 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                                 ),
                               )),
                         ),
-                        SizedBox(
-                            height: ARC_HEIGHT,
-                            width: ARC_WIDTH,
-                            child: Container(
-                              decoration:BoxDecoration  ( color:Colors.white,
-                                shape: BoxShape.circle,
-                              ),
-
-                            )
-                          // child: CustomPaint(
-                          //   foregroundPainter: HalfPainter(barBackgroundColor),
-                          // )
-                        ),
+                        // SizedBox(
+                        //     height: ARC_HEIGHT,
+                        //     width: ARC_WIDTH,
+                        //     child: Container(
+                        //       decoration:BoxDecoration  ( color:Colors.transparent,
+                        //         shape: BoxShape.circle,
+                        //       ),
+                        //
+                        //     )
+                        //   // child: CustomPaint(
+                        //   //   foregroundPainter: HalfPainter(barBackgroundColor),
+                        //   // )
+                        // ),
+                        // Positioned(
+                        //   bottom: 0,
+                        //   child: SizedBox(
+                        //       height: ARC_HEIGHT,
+                        //       width: ARC_WIDTH-8,
+                        //       child: Material(
+                        //         elevation: 5,
+                        //         color:Colors.white,
+                        //         borderRadius: BorderRadius.only(
+                        //           // topLeft: Radius.circular(50),
+                        //           // topRight: Radius.circular(50),
+                        //           bottomRight: Radius.circular(50),
+                        //           bottomLeft: Radius.circular(50),
+                        //         ),
+                        //
+                        //       )
+                        //     // child: CustomPaint(
+                        //     //   foregroundPainter: HalfPainter(barBackgroundColor),
+                        //     // )
+                        //   ),
+                        // ),
                         SizedBox(
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
                           child: Container(
 
                             decoration: BoxDecoration(
-                            //   boxShadow: [
-                            //
-                            //   BoxShadow(
-                            //     // color: Colors.grey.shade700
-                            //     //     .withOpacity(0.25),
-                            //     spreadRadius: 3,
-                            //     blurRadius: 3,
-                            //     offset: Offset(
-                            //         0, 4), // changes position of shadow
-                            //   ),
-                            // ],
+                              boxShadow: [
+
+                              BoxShadow(
+                                color: Colors.grey.shade800
+                                    .withOpacity(0.25),
+                                spreadRadius: 3,
+                                blurRadius: 3,
+                                offset: Offset(
+                                    0, 4), // changes position of shadow
+                              ),
+                            ],
                               borderRadius: BorderRadius.circular(50),
                               gradient: LinearGradient(
                                   colors: [
@@ -247,7 +268,8 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                               ),
                             ),
                           ),
-                        )
+                        ),
+
                       ],
                     ),
                   ),
