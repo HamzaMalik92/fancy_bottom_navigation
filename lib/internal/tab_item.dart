@@ -50,65 +50,63 @@ style: ButtonStyle(
           widget.callbackFunction(widget.uniqueKey);
 
         },
-        child: Container(
-          child: Column(
-            // fit: StackFit.loose,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+        child: Column(
+          // fit: StackFit.loose,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
 
-              Container(
-                // color: Colors.red,
-                height: 20,
+            Container(
+              // color: Colors.red,
+              height: 20,
 
-                // height: double.infinity,
-                // width: double.infinity,
+              // height: double.infinity,
+              // width: double.infinity,
 
-                child: AnimatedAlign(
+              child: AnimatedAlign(
+                duration: Duration(milliseconds: ANIM_DURATION),
+                curve: Curves.easeIn,
+                alignment: Alignment(0, (widget.selected) ? ICON_OFF : ICON_ON),
+                child: AnimatedOpacity(
                   duration: Duration(milliseconds: ANIM_DURATION),
-                  curve: Curves.easeIn,
-                  alignment: Alignment(0, (widget.selected) ? ICON_OFF : ICON_ON),
-                  child: AnimatedOpacity(
-                    duration: Duration(milliseconds: ANIM_DURATION),
-                    opacity: (widget.selected) ? ALPHA_OFF : ALPHA_ON,
-                    child: IconButton(
+                  opacity: (widget.selected) ? ALPHA_OFF : ALPHA_ON,
+                  child: IconButton(
 
-                      highlightColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      padding: EdgeInsets.all(0),
-                      alignment: Alignment(0, 0),
-                      icon: Icon(
-                        widget.iconData,
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    padding: EdgeInsets.all(0),
+                    alignment: Alignment(0, 0),
+                    icon: Icon(
+                      widget.iconData,
 
-                        color: widget.iconColor,
-                      ),
-                      onPressed: () {
-                        widget.callbackFunction(widget.uniqueKey);
-                      },
+                      color: widget.iconColor,
                     ),
+                    onPressed: () {
+                      widget.callbackFunction(widget.uniqueKey);
+                    },
                   ),
                 ),
               ),
-              SizedBox(
-                height: 3,
-              ),
-              Container(
-                // color: Colors.red,
-                height: 20,
-                // width: double.infinity,
-                child: AnimatedAlign(
-                    duration: Duration(milliseconds: ANIM_DURATION),
-                    alignment: Alignment(0, (widget.selected) ?  TEXT_OFF: TEXT_ON),
-                    child: Text(
-                      widget.title,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: widget.selected?Colors.transparent:widget.textColor,
-                      fontSize: 13),
-                    )),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Container(
+              // color: Colors.red,
+              height: 20,
+              // width: double.infinity,
+              child: AnimatedAlign(
+                  duration: Duration(milliseconds: ANIM_DURATION),
+                  alignment: Alignment(0, (widget.selected) ?  TEXT_OFF: TEXT_ON),
+                  child: Text(
+                    widget.title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(
+                        color: widget.selected?Colors.transparent:widget.textColor,
+                    fontSize: 12),
+                  )),
+            ),
+          ],
         ),
       ),
     );
