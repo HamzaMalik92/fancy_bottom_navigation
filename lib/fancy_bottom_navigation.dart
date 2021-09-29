@@ -259,7 +259,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                               child: AnimatedOpacity(
                                 duration:
                                     Duration(milliseconds: ANIM_DURATION ~/ 5),
-                                opacity: _circleIconAlpha,
+                                opacity: 1,
                                 child: Icon(
                                   activeIcon,
                                   size: 27,
@@ -285,17 +285,20 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
   _initAnimationAndStart(double from, double to) {
     _circleIconAlpha = 0;
 
-    Future.delayed(Duration(milliseconds: ANIM_DURATION ~/ 5), () {
+    Future.delayed(Duration(milliseconds: ANIM_DURATION ~/ 5*3), () {
       setState(() {
         activeIcon = nextIcon;
       });
-    }).then((_) {
-      Future.delayed(Duration(milliseconds: (ANIM_DURATION ~/ 5 * 3)), () {
-        setState(() {
-          _circleIconAlpha = 1;
-        });
-      });
-    });
+    }
+    // )
+    //     .then((_) {
+    //   Future.delayed(Duration(milliseconds: (ANIM_DURATION ~/ 5 * 3)), () {
+    //     setState(() {
+    //       _circleIconAlpha = 1;
+    //     });
+    //   });
+    // }
+    );
   }
 
   void setPage(int page) {
